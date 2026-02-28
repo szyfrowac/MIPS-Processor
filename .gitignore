@@ -1,0 +1,9 @@
+Single Cycle Processor/alu_control.v
+Single Cycle Processor/alu.v
+Single Cycle Processor/Single Cycle Processor.xpr
+Single Cycle Processor/Single Cycle Processor.cache/wt/project.wpc
+Single Cycle Processor/Single Cycle Processor.cache/wt/synthesis.wdf
+Single Cycle Processor/Single Cycle Processor.hw/Single Cycle Processor.lpr
+Single Cycle Processor/Single Cycle Processor.srcs/sources_1/new/adder.v
+Single Cycle Processor/Single Cycle Processor.srcs/sources_1/new/instruction_fetch.v
+Single Cycle Processor/Single Cycle Processor.srcs/sources_1/new/program_counter.v
