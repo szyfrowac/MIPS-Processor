@@ -28,12 +28,12 @@ module instruction_memory(
     
     reg [31:0] mem [3:0] ;
 
-    always @(*) begin
-    mem[0] = 32'h00430825; // OR reg3, reg1, reg2
-    mem[1] = 32'h20A4FFEB; // SUBI reg4, reg5, 21 
-    mem[2] = 32'hADCE0005; // SW reg6, 5 (reg7)
-    mem[3] = 32'h11280007; // BEQ reg9, reg8, 7
-end
+    initial begin
+        mem[0] = 32'h00430825; // OR reg3, reg1, reg2
+        mem[1] = 32'h20A4FFEB; // SUBI reg4, reg5, 21 
+        mem[2] = 32'hADCE0005; // SW reg6, 5 (reg7)
+        mem[3] = 32'h11280007; // BEQ reg9, reg8, 7
+    end
   
     
     assign instruction = mem[instr_address[31:2]]  ; //since pc is byte addressable so each instr you do pc + 4, but in memory we store words so we only consider 31:2;

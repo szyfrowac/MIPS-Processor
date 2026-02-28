@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 02/11/2026 03:18:52 PM
+// Create Date: 02/28/2026 11:31:08 PM
 // Design Name: 
-// Module Name: pc_register
+// Module Name: tb_top_module
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,14 +20,26 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module pc_register(
-    input clk, rst,
-    input [31:0] adder_address,
-    output reg [31:0] instr_address
-    );
+module tb_top_module();
+
+reg clk, rst;
+
+top_module dut(
+    clk, rst
+);
     
-    always@(posedge clk or posedge rst) begin
-        if(rst) instr_address <= 32'b0;
-        else instr_address <= adder_address;
+initial begin 
+    clk = 0;
+    rst = 1;
+    #50
+    clk = 1;
+    rst = 0;
+    
+    repeat(6) begin
+        #50 clk = ~clk;
     end
+
+    $finish;
+end
+
 endmodule

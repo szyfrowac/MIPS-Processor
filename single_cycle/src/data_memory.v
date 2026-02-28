@@ -7,7 +7,10 @@ module data_memory(
 );
 
     reg [31:0] mem [0:31];     
-
+    
+    initial begin
+        $readmemh("data_init.mem", mem);
+    end
 
     always @(posedge clk) begin
         if (mem_write) begin

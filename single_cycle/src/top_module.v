@@ -29,7 +29,7 @@ module top_module(
     wire [31:0] instruction;
     wire [31:0] result, read_data_1, read_data_2, write_data;
     wire [31:0] write_register, read_data, alu_in;
-    wire [2:0] alu_ctrl;
+    wire [2:0] alu_ctrl, alu_op;
     
     pc_register pc(
         clk, rst,
@@ -45,7 +45,7 @@ module top_module(
     
     mux2to1 m1(adder_address, alu_result, pcsrc, mux_out);
     
-    mux2to1 m2(instruction[20:16], instruction[15:11], reg_dst, write_register);
+    mux2to1 m2({27'b0, instruction[20:16]}, {27'b0, instruction[15:11]}, reg_dst, write_register);
     
     register_memory rm1(instruction[25:21],instruction[20:16],write_register, reg_write, 
     write_data,
@@ -71,6 +71,13 @@ module top_module(
     zero       //zeroflag_for_beq, wired back to PC,PC branches only when control signal and zero flag is true
     );
     
+    alu_control ac1(
+
+    instruction[5:0],
+    alu_op,
+    alu_ctrl
+    );
+    
     control_unit cu1(
     instruction[31:26],
     reg_dst, //determines which instruction field specifies dest_reg address based on the type of instruction
@@ -81,7 +88,6 @@ module top_module(
     mem_to_reg,
 
     alu_op // goes to ALU to specify what operation to be done
-
     );
     
     data_memory dm1(

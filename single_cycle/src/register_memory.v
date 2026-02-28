@@ -25,11 +25,15 @@ module register_memory(
     input register_write, // set by control signal
     input [31:0] write_data,
     input clk,
-    output [31:0]  read_data_1, [31:0] read_data_2 //spitting out the data from registers
+    output [31:0] read_data_1, read_data_2 //spitting out the data from registers
 
     );
     
     reg [31:0] mem_regs [31:0] ; //32 bit memory file and there are 32 in total
+    
+    initial begin
+        $readmemh("reg_init.mem", mem_regs);
+    end
     
  
    assign read_data_1 = (read_register_1 == 0)? 32'b0 : mem_regs [read_register_1] ; // this a 5 bit number 0 to 31 indicating the reg number
