@@ -84,3 +84,5 @@ WARNING: [Vivado-projutils-10] Found source(s) that were local or imported into 
  please ensure that the project source(s) are also part of this source controlled data. The list of these local source(s) can be found in the generated script
  under the header section.
 
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 15 12:19:06 2026...
