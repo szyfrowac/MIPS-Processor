@@ -13,3 +13,5 @@ Single Cycle Processor/Single Cycle Processor.srcs/sources_1/new/program_counter
 .vscode/c_cpp_properties.json
 .vscode/settings.json
 vivado_pid23975.str
+vivado.jou
+vivado.log
