@@ -7,3 +7,8 @@ Single Cycle Processor/Single Cycle Processor.hw/Single Cycle Processor.lpr
 Single Cycle Processor/Single Cycle Processor.srcs/sources_1/new/adder.v
 Single Cycle Processor/Single Cycle Processor.srcs/sources_1/new/instruction_fetch.v
 Single Cycle Processor/Single Cycle Processor.srcs/sources_1/new/program_counter.v
+.vscode/browse.vc.db
+.vscode/browse.vc.db-shm
+.vscode/browse.vc.db-wal
+.vscode/c_cpp_properties.json
+.vscode/settings.json
