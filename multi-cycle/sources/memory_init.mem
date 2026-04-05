@@ -1,0 +1,30 @@
+// 1. ADDI reg2, reg1, 40
+//    opcode=001000, rs=00001, rt=00010, imm=0000000000101000
+//    = 0010 0000 0010 0010 0000 0000 0010 1000
+//    = 20220028
+//
+// 2. LW reg4, 8(reg3)
+//    opcode=100011, rs=00011, rt=00100, imm=0000000000001000
+//    = 1000 1100 0110 0100 0000 0000 0000 1000
+//    = 8C640008
+//
+// 3. NAND reg7, reg5, reg6
+//    opcode=000000 (R-type), rs=00101, rt=00110, rd=00111, shamt=00000, funct=
+//    = 0000 0000 1010 0110 0011 1000 0010 0001  (if funct=100001 for NAND)
+//    Using funct=100001 (example — match your alu_control.v)
+//    = 00A63821
+//    (Adjust funct field to match your ALU control encoding)
+//
+// 4. BNEQ reg8, reg9, 10
+//    opcode=000101 (custom BNEQ), rs=01000, rt=01001, imm=0000000000001010
+//    = 0001 0101 0000 1001 0000 0000 0000 1010
+//    = 1509000A
+
+20220028
+8C640008
+00A63821
+1509000A
+
+// Preloaded data for LW test (word address 2 = byte address 8)
+// reg3 = 0 initially, so LW reg4, 8(reg3) reads address 8 → word index 2
+DEADBEEF
